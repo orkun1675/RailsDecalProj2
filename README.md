@@ -1,15 +1,15 @@
 # MoonGate
-Title: <br />
+Title:
 	MoonGate<br />
-Team Members: <br />
+Team Members:
 	Orkun Duman, Doug Hapeman, Justin Liu, Chandler Song, Provi Zhang<br />
-Demo Link: <br />
-	https://mighty-plateau-53890.herokuapp.com/<br />
+Demo Link:
+	https://mighty-plateau-53890.herokuapp.com/<br /><br />
 
-Idea: <br />
-	A support website for MoonGate, a game similar to Minecraft. Users can login to the website using their nickname from the game. Users can open Support Tickets that are then answered by the moderators. Users can also see their statistics and the in-game rankings.
+Idea: <br /><br />
+	A support website for MoonGate, a game similar to Minecraft. Users can login to the website using their nickname from the game. Users can open Support Tickets that are then answered by the moderators. Users can also see their statistics and the in-game rankings.<br /><br />
 
-Models and Description:<br />
+Models and Description:<br /><br />
 	User<br />
 		-Fields: UUID, Nickname, Email, Password, Permission<br />
 		-User can either be a regular user, moderator, or administrator<br />
@@ -21,15 +21,15 @@ Models and Description:<br />
 		-Fields: User, Category, Subject, Message, Resolved?<br />
 	Support Ticket Message<br />
 		-belongs to a Support Ticket<br />
-		-Fields: Sender, Moderator<br />
+		-Fields: Sender, Moderator<br /><br />
 
-Features:<br />
+Features:<br /><br />
 	Users can log in<br />
 	Users can see their stats and rankings<br />
 	Users can open Support Tickets<br />
-	Moderators can respond to Support Tickets<br />
+	Moderators can respond to Support Tickets<br /><br />
 
-Division of Labor:<br />
+Division of Labor:<br /><br />
 	Orkun - Backend, Main Page<br />
 	Doug - Login and User Panel Pages, Writeup<br />
 	Justin - Character Stats Page<br />
