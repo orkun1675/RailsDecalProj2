@@ -1,4 +1,5 @@
 class TicketsController < ApplicationController
+  before_action :set_ticket, only: [:show, :destroy, :close]
   
   def index
     @tickets = Ticket.all
@@ -12,7 +13,7 @@ class TicketsController < ApplicationController
     @ticket = Ticket.new(ticket_params)
     if @ticket.save
       flash[:success] = "Ticket was successfully created."
-      redirect_to ticket_path(@Ticket)
+      redirect_to ticket_path(@ticket)
     else
       render :new
     end
@@ -27,13 +28,16 @@ class TicketsController < ApplicationController
     redirect_to tickets_path
   end
 
-  def close_ticket
+  def close
     @ticket.update_attribute(:resolved, true)
     flash[:success] = "Ticket was successfully closed."
     redirect_to ticket_path
   end
 
   private
+  def set_ticket
+    @ticket = Ticket.find(params[:id])
+  end
   def ticket_params    
     params.require(:ticket).permit(:user_id, :category_id, :subject, :message)
   end

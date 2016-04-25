@@ -1,11 +1,11 @@
 <h1 align="center">Tickets</h1>
 
-<%= @tickets.each do |t| %>
+<% @tickets.each do |t| %>
   <div class="row">
     <div class="col-xs-8 col-xs-offset-2">
       <div class="well well-lg">
         <div class="ticket-subject">
-          <%= link_to t.subject, ticket_path(ticket) %>
+          <%= link_to t.subject, ticket_path(t) %>
         </div>
         <div class="ticket-message">
           <%= truncate(t.message, length: 40) %>
@@ -20,4 +20,6 @@
     </div>
   </div>
 <% end %>
-
+<div class="text-center">
+  <%= link_to "Create new ticket", new_ticket_path, class: "btn btn-lg btn-primary"%>
+</div>
