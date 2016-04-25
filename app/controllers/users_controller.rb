@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_action :authenticate_user!
+	before_action :authenticate_user!, :except => [:main]
 
 	def main
   		@logged_in = current_user
