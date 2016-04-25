@@ -1,6 +1,6 @@
 class TicketsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_ticket, only: [:show, :destroy, :close]
+  before_action :set_ticket, only: [:show, :destroy, :close, :open]
   
   def index
     @tickets = Ticket.all
@@ -21,6 +21,10 @@ class TicketsController < ApplicationController
   end
   
   def show
+    @status = 'off'
+    if @ticket.resolved
+      @status = 'on'
+    end
   end
   
   def destroy
@@ -32,6 +36,12 @@ class TicketsController < ApplicationController
   def close
     @ticket.update_attribute(:resolved, true)
     flash[:success] = "Ticket was successfully closed."
+    redirect_to ticket_path
+  end
+
+  def open
+    @ticket.update_attribute(:resolved, false)
+    flash[:success] = "Ticket was successfully opened."
     redirect_to ticket_path
   end
 

@@ -1,30 +1,28 @@
-<div id="nav">
-	<div id="head"></div>
-	<ul>
-		<h1>Nickname</h1>
-		<li id="m1"><a>Gold</a></li>
-		<li id="m2"><a>MoonStone</a></li>
-		<li id="m3"><a>Stat 3</a></li>
-		<li id="m4"><a>Stat 4</a></li>
-	</ul>
-	<div id="body">
-		<div id="body-inner">
-			<div id="body-left">
-				<div id="topic-pic"> <img src="https://minotar.net/body/clone1018/260.png" alt="Character picture" /> </div>
-			</div>
-			<div id="body-right">
-				<h2>User Profile</h2>
-				<p>Nickname: <%= @user.nickname %></p>
-				<p>Email: <%= @user.email %></p>
-				<p>Are you a moderator?:
-					<% if @user.permission > 0 %>
-						<%= raw("Yes") %>
-					<% else %>
-						<%= raw "No" %>
-					<% end %>
-				</p>
-				<p>Support Ticket Count: <%= @user.tickets.count %></p>
-				<button class="pure-button">View Support Tickets</button>
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<div class="well well-sm">
+				<div class="row">
+					<div class="col-sm-6 col-md-5">
+						<img src="https://minotar.net/body/clone1018/260.png" alt="" class="img-rounded img-responsive" />
+					</div>
+					<div class="col-sm-6 col-md-7">
+						<h4>Hello <%= @user.nickname %>!</h4>
+						<p><span class="glyphicon glyphicon-envelope"></span> <strong>Nickname:</strong> <%= @user.nickname %></p>
+						<p><span class="glyphicon glyphicon-envelope"></span> <strong>Email:</strong> <%= @user.email %></p>
+						<p><span class="glyphicon glyphicon-envelope"></span> <strong>Moderator?:</strong> 
+							<% if @user.permission > 0 %>
+							<%= raw("Yes") %>
+							<% else %>
+							<%= raw "No" %>
+							<% end %>
+						</p>
+						<p><span class="glyphicon glyphicon-envelope"></span> <strong>Support Ticket Count:</strong> <%= @user.tickets.count %></p>
+						<form action="/tickets">
+						    <input type="submit" value="View Support Tickets" class="btn btn-primary">
+						</form>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
