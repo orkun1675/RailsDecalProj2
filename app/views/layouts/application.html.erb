@@ -8,6 +8,22 @@
 </head>
 <body>
 
+<header>
+    <div class="head-container">
+      <h1><a href="index.html">MoonGate</a></h1>
+      <nav>
+        <ul>
+        	<% if user_signed_in? %>
+        		<li><a href="index.html" class="icon messages">Support Tickets<span>0</span></a></li>
+        		<li><a href="users/profile" class="icon profile">Welcome <%= current_user.nickname %></a></li>
+        	<% else %>
+        		<li><a href="index.html" class="icon login">Login</a></li>
+			<% end %>
+        </ul>
+      </nav>
+    </div>
+</header>
+
 <%= yield %>
 
 </body>
