@@ -4,7 +4,7 @@ Title:
 Team Members: 
 	Orkun Duman, Doug Hapeman, Justin Liu, Chandler Song, Provi Zhang
 Demo Link: 
-	INSERT LINK
+	https://mighty-plateau-53890.herokuapp.com/
 
 Idea: 
 	A support website for MoonGate, a game similar to Minecraft. Users can login to the website using their nickname from the game. Users can open Support Tickets that are then answered by the moderators. Users can also see their statistics and the in-game rankings.
