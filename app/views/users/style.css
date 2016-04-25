@@ -13,7 +13,7 @@
 body {
   font: 13px/20px 'Lucida Grande', Tahoma, Verdana, sans-serif;
   color: #404040;
-  background: #0ca3d2;
+  background: white;
 }
 
 .container {
@@ -156,4 +156,15 @@ input[type=submit] {
 
 .lt-ie9 {
   input[type=text], input[type=password] { line-height: 34px; }
+}
+
+.stats {
+  margin-left: 50px;
+  font-size: 20px;
+  float:left;
+}
+
+.character-img {
+  position: relative;
+  margin-left: 20px;
 }
